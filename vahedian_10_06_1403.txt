@@ -716,3 +716,362 @@
 "rdrc_timeout": "168h0m0s"
 }
 }
+}
+{
+"log": {
+"disabled": true,
+"level": "panic"
+},
+"dns": {
+"servers": [
+{
+"tag": "@𝐗𝐯𝐩𝐧𝐯𝐢𝐩👈کانال+تلگرام-dns",
+"address": "https://8.8.8.8/dns-query",
+"address_resolver": "direct-dns",
+"address_strategy": "prefer_ipv6",
+"strategy": "prefer_ipv6",
+"detour": "@𝐗𝐯𝐩𝐧𝐯𝐢𝐩👈کانال+تلگرام"
+},
+{
+"tag": "@🅧🅥🅟🅝🅥🅘🅟-dns",
+"address": "https://8.8.8.8/dns-query",
+"address_resolver": "direct-dns",
+"address_strategy": "prefer_ipv6",
+"strategy": "prefer_ipv6",
+"detour": "@🅧🅥🅟🅝🅥🅘🅟"
+},
+{
+"tag": "direct-dns",
+"address": "local",
+"address_strategy": "prefer_ipv6",
+"strategy": "prefer_ipv6",
+"detour": "direct"
+},
+{
+"tag": "block-dns",
+"address": "rcode://success"
+}
+],
+"rules": [
+{
+"domain_suffix": [
+".arpa.",
+".arpa"
+],
+"server": "block-dns",
+"rewrite_ttl": 20
+},
+{
+"domain_suffix": [
+"h.88981401.xyz",
+"arvancloudstatus.ir",
+"all-in.daiijannapoleon.fun",
+"arvancloudstatus.ir",
+"azadi2.dgi000.store"
+],
+"server": "direct-dns",
+"rewrite_ttl": 20
+},
+{
+"network": "udp",
+"port": 443,
+"server": "block-dns",
+"rewrite_ttl": 20
+},
+{
+"outbound": "@𝐗𝐯𝐩𝐧𝐯𝐢𝐩👈کانال+تلگرام",
+"server": "@𝐗𝐯𝐩𝐧𝐯𝐢𝐩👈کانال+تلگرام-dns",
+"rewrite_ttl": 20
+},
+{
+"outbound": "@🅧🅥🅟🅝🅥🅘🅟",
+"server": "@🅧🅥🅟🅝🅥🅘🅟-dns",
+"rewrite_ttl": 20
+},
+{
+"outbound": "direct",
+"server": "direct-dns",
+"rewrite_ttl": 20
+},
+{
+"outbound": "any",
+"server": "direct-dns",
+"rewrite_ttl": 20
+}
+],
+"strategy": "prefer_ipv6",
+"disable_expire": true
+},
+"inbounds": [
+{
+"type": "tun",
+"tag": "tun-in",
+"interface_name": "tun0",
+"mtu": 9000,
+"inet4_address": "172.19.0.1/30",
+"auto_route": true,
+"strict_route": true,
+"stack": "mixed",
+"sniff": true
+},
+{
+"type": "mixed",
+"tag": "mixed-in",
+"listen": "0.0.0.0",
+"listen_port": 2080,
+"sniff": true,
+"domain_strategy": "prefer_ipv6"
+}
+],
+"outbounds": [
+{
+"type": "selector",
+"tag": "@𝐗𝐯𝐩𝐧𝐯𝐢𝐩👈کانال+تلگرام",
+"outbounds": [
+"@🅧🅥🅟🅝🅥🅘🅟",
+"🤴🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"👸🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"💃🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🕺🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🌹@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🫀@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"👰‍♀️@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"👩‍❤️‍💋‍👨@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🤰🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🤱🏻@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🧡@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام"
+]
+},
+{
+"type": "urltest",
+"tag": "@🅧🅥🅟🅝🅥🅘🅟",
+"outbounds": [
+"🤴🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"👸🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"💃🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🕺🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🌹@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🫀@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"👰‍♀️@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"👩‍❤️‍💋‍👨@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🤰🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🤱🏻@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"🧡@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام"
+],
+"url": "http://www.google.com/generate_204",
+"interval": "10m0s",
+"tolerance": 50,
+"idle_timeout": "30m0s"
+},
+{
+"type": "http",
+"tag": "🤴🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "85.202.81.159",
+"server_port": 90,
+"username": "E93HGGpA8jQPvnehhrA7DwoD",
+"password": "C8dAN1ccgBNyBqG4WCFynQXH",
+"path": "",
+"headers": {
+"Host": [
+"marilynmanson.link"
+]
+},
+"tls": {  "enabled": true,
+"disable_sni": false,
+"alpn": [],
+"server_name": "32taksi.com",
+"insecure": true}
+},
+{
+"type": "http",
+"tag": "👸🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "194.233.96.87",
+"server_port": 90,
+"username": "E93HGGpA8jQPvnehhrA7DwoD",
+"password": "C8dAN1ccgBNyBqG4WCFynQXH",
+"path": "",
+"headers": {
+"Host": [
+"marilynmanson.link"
+]
+},
+"tls": {  "enabled": true,
+"disable_sni": false,
+"alpn": [],
+"server_name": "32taksi.com",
+"insecure": true}
+},
+{
+"type": "http",
+"tag": "💃🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "85.190.238.15",
+"server_port": 90,
+"username": "E93HGGpA8jQPvnehhrA7DwoD",
+"password": "C8dAN1ccgBNyBqG4WCFynQXH",
+"path": "",
+"headers": {
+"Host": [
+"marilynmanson.link"
+]
+},
+"tls": {  "enabled": true,
+"disable_sni": false,
+"alpn": [],
+"server_name": "32taksi.com",
+"insecure": true}
+},
+{
+"type": "http",
+"tag": "🕺🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "85.190.238.5",
+"server_port": 90,
+"username": "E93HGGpA8jQPvnehhrA7DwoD",
+"password": "C8dAN1ccgBNyBqG4WCFynQXH",
+"path": "",
+"headers": {
+"Host": [
+"marilynmanson.link"
+]
+},
+"tls": {  "enabled": true,
+"disable_sni": false,
+"alpn": [],
+"server_name": "32taksi.com",
+"insecure": true}
+},
+{
+"type": "http",
+"tag": "🌹@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "85.190.238.1",
+"server_port": 90,
+"username": "E93HGGpA8jQPvnehhrA7DwoD",
+"password": "C8dAN1ccgBNyBqG4WCFynQXH",
+"path": "",
+"headers": {
+"Host": [
+"marilynmanson.link"
+]
+},
+"tls": {  "enabled": true,
+"disable_sni": false,
+"alpn": [],
+"server_name": "32taksi.com",
+"insecure": true}
+},
+{
+"type": "http",
+"tag": "🫀@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "45.85.144.100",
+"server_port": 90,
+"username": "E93HGGpA8jQPvnehhrA7DwoD",
+"password": "C8dAN1ccgBNyBqG4WCFynQXH",
+"path": "",
+"headers": {
+"Host": [
+"marilynmanson.link"
+]
+},
+"tls": {  "enabled": true,
+"disable_sni": false,
+"alpn": ["h2,http/1.1"],
+"server_name": "icloud.cdn-apple.com",
+"insecure": true}
+},
+{
+"type": "http",
+"tag": "👰‍♀️@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "45.85.144.100",
+"server_port": 90,
+"username": "E93HGGpA8jQPvnehhrA7DwoD",
+"password": "C8dAN1ccgBNyBqG4WCFynQXH",
+"path": "",
+"headers": {
+"Host": [
+"marilynmanson.link"
+]
+},
+"tls": {  "enabled": true,
+"disable_sni": false,
+"alpn": ["h2,http/1.1"],
+"server_name": "icloud.cdn-apple.com",
+"insecure": true}
+},
+{
+"type": "http",
+"tag": "👩‍❤️‍💋‍👨@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "212.97.70.3",
+"server_port": 90,
+"username": "yLoEDZiuRqdg8HqQfaEMXhzn",
+"password": "xFJrJhcRDNSf7a7SCxz1wH4u",
+"path": "",
+"headers": {
+"Host": [
+"marilynmanson.link"
+]
+},
+"tls": {  "enabled": true,
+"disable_sni": false,
+"alpn": ["h2,http/1.1"],
+"server_name": "icloud.cdn-apple.com",
+"insecure": true}
+},
+{
+"type": "shadowsocks",
+"tag": "🤰🏼@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "217.30.10.18",
+"server_port": 9064,
+"method": "aes-256-cfb",
+"password": "cp8pRSUAyLhTfVWH"
+},
+{
+"type": "shadowsocks",
+"tag": "🤱🏻@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "217.30.10.18",
+"server_port": 9014,
+"method": "aes-256-cfb",
+"password": "KnJGad3FqTvjqbaX"
+},
+{
+"type": "shadowsocks",
+"tag": "🧡@𝙓𝙫𝙥𝙣𝙫𝙞𝙥👈🏻کانال تلگرام",
+"server": "217.30.10.18",
+"server_port": 9008,
+"method": "aes-256-cfb",
+"password": "y9VURyNzJWNRYEGQ"
+},
+{
+"type": "direct",
+"tag": "direct"
+},
+{
+"type": "block",
+"tag": "block"
+},
+{
+"type": "dns",
+"tag": "dns-out"
+}
+],
+"route": {
+"rules": [
+{
+"port": 53,
+"outbound": "dns-out"
+},
+{
+"ip_is_private": true,
+"outbound": "direct"
+}
+],
+"final": "@𝐗𝐯𝐩𝐧𝐯𝐢𝐩👈کانال+تلگرام",
+"auto_detect_interface": true,
+"override_android_vpn": true
+},
+"experimental": {
+"cache_file": {
+"enabled": true,
+"path": "cache.db",
+"cache_id": "azadi",
+"rdrc_timeout": "168h0m0s"
+}
+}
